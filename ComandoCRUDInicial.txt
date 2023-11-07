@@ -1,0 +1,40 @@
+USE BancoSenac;
+
+CREATE TABLE usuario(
+    id int NOT NULL,
+    nome varchar(100) NOT NULL,
+	idade int NOT NULL,
+	email varchar(100) NOT NULL UNIQUE,
+	salario float,
+    senha varchar(250) NOT NULL
+);
+
+
+INSERT INTO usuarios(id, nome, idade, email, salario, senha)
+VALUES(1, 'Julia Teles', 23, 'email@gmail.com', 2000.60, 'q1w2e3r4'),
+(2, 'Paulo Souza', 18, 'email2@gmail.com', 2500.60, 'jskdjakse'),
+(3, 'Pedro Belchior', 25, 'email2023@gmail.com', 2320.80, 'lkjdhjse');
+
+
+/* ALTER TABLE usuarios ADD  id_user int IDENTITY(1,1)  unique;*/
+
+ /* CREATE TABLE produtos(
+	id int NOT NULL,
+    nome varchar(100) NOT NULL,
+ ); */
+
+/* INSERT INTO produtos(id, nome) VALUES(1, 'laranja'); 
+INSERT INTO produtos(id, nome) VALUES(2, 'uva'), (3, 'banana'), (4, 'limão'),(5, 'melancia') ;*/
+
+CREATE TABLE endereco(
+    id_endereco int NOT NULL PRIMARY KEY,
+    rua varchar(250) NOT NULL UNIQUE,
+    numero int NOT NULL,
+    bairro varchar(100),
+    cidade varchar(100),
+    estado varchar(2)
+);
+
+INSERT INTO endereco(id_endereco,rua, numero, bairro, cidade, estado)
+VALUES(1, 'Travessa do Silva', 18, 'Barreto', 'Niteroi', 'RJ'), (2, 'Rua Paulo Gustavo', 26, 'Icaraí', 'Niterói', 'RJ'), (3, 'Rua Craveiro Lopes', 103, 'Barreto', 'Niterói', 'RJ'),
+ (4, 'Rua Lopes Trovão', 180, 'Icaraí', 'Niterói', 'RJ'), (5, 'Rua Pastor Jóse de Melo', 89, 'Engenhoca', 'Niterói', 'RJ') ; 
